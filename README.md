@@ -1,4 +1,3 @@
-basic_algorithm
-===============
+基础算法代码
 
-basic algorithm test codes
+本代码库主要包括了对《算法导论》中伪代码实现。
