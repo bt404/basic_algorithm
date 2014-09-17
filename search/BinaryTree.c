@@ -115,7 +115,7 @@ struct node *tree_insert(struct node **root,int key)
 
 struct node *tree_delete(struct node *root,struct node *del)
 {
-    struct node *x,*y;
+    struct node *x, *y;
     if(del->left==NULL||del->right==NULL)
     {
         y=del;
@@ -134,7 +134,10 @@ struct node *tree_delete(struct node *root,struct node *del)
         x=y->right;
     }
 
-    x->parent=y->parent;
+    if(x)
+    {
+        x->parent=y->parent;
+    }
     if(y->parent==NULL)
     {
         root=x;

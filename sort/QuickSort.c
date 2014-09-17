@@ -2,6 +2,7 @@
 
 int Partition(int a[], int p, int r)
 {
+    if (!a) return -1;
     int i = p;
     int j, temp;
     for(j=p; j<r; ++j)

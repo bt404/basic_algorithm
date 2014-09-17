@@ -21,9 +21,9 @@ void Merge(int a[],int p,int q,int r)
     i=0;
     j=0;
     int k;
-    for(k=p;k<=r;++k)
+    for(k=p; k<=r; ++k)
     {
-        if(L[i]<=R[j])
+        if(L[i] <= R[j])
         {
             a[k]=L[i];
             ++i;
