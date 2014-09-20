@@ -3,7 +3,7 @@ def GeoHash(lat, lng):
     min_lat = -180
     max_lng = 90
     min_lng = -90
-    if not (min_lat<=lat<=max_lat) or not (min_lng<=lng<=max_lng):
+    if not (min_lat<=lat<=max_lat and min_lng<=lng<=max_lng):
         return -1
     ret = ""
     for i in xrange(26):
