@@ -4,13 +4,9 @@ MAX_LNG = 90
 MIN_LNG = -90
 
 
-def GeoHash(lat, lng, times=26):
+def GeoHash(lat, lng, times=26, max_lat=MAX_LAT, min_lat=MIN_LAT, max_lng=MAX_LNG, min_lng=MIN_LNG):
     if not (MIN_LAT<=lat<=MAX_LAT and MIN_LNG<=lng<=MAX_LNG) or times<=0:
         return -1
-    max_lat = MAX_LAT
-    min_lat = MIN_LAT
-    max_lng = MAX_LNG
-    min_lng = MIN_LNG
     ret = ""
     for i in xrange(times):
         if lat < (max_lat+min_lat)/2.0:
