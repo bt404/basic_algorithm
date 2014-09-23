@@ -18,7 +18,6 @@ void ShellSort(int data[], int length)
                 j -= gap;
             }
             data[j+gap] = tmp;
-            j -= gap;
         }
         gap /= 2;
     }
