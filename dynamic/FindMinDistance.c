@@ -21,8 +21,10 @@ int FindMinDistance(char * str1, char * str2)
         table[i][0] = i;
         for (int j = 1; j <= size2; ++j)
         {
-            if (str1[i] == str2[j])
+            if (str1[i-1] == str2[j-1])
+            {
                 table[i][j] = table[i-1][j-1];
+            }
             else
                 table[i][j] = MinNum(table[i-1][j-1]+1, table[i][j-1]+1, table[i-1][j]+1);
         }
@@ -35,6 +37,8 @@ int main(void)
 {
     char *str1 = "hello world";
     char *str2 = "ello nor";
+    char *str3 = "a";
+    char *str4 = "b";
     int distance = FindMinDistance(str1, str2);
     printf("%d\n", distance);
     return 0;
