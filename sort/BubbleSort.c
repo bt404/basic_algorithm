@@ -37,7 +37,7 @@ void Bubble_Sort_Up(int a[],int n)
 int main(void)
 {
     int a[10]={2,1,5,4,3,6,7,10,9,8};
-    Bubble_Sort_Down(a,10);
+    Bubble_Sort_Up(a,10);
     int i=0;
     for(;i<10;++i)
     {

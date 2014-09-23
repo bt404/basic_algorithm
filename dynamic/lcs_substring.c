@@ -7,8 +7,8 @@ int lcs(char *str1, char *str2)
     int size2 = strlen(str2);
     if (size1 == 0 || size2 == 0) return 0;
 
-    int start1 = -1;
-    int start2 = -1;
+    /*int start1 = -1;
+    int start2 = -1;*/
     int table[size1][size2];
     /* 初始化放在 table 的构造过程中实现 */
     /*for (int i = 0; i < size1; ++i)
