@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/* 使用二维数组 */
 void PrintRotate2DimMatrix(int data[][3], int length)
 {
     for(int j=length-1; j>=0; --j)
@@ -24,6 +25,7 @@ void PrintRotate2DimMatrix(int data[][3], int length)
     }
 }
 
+/* 使用一维数组 */
 void PrintRotateMatrix(int data[], int length)
 {
     for(int j=length-1; j>=0; --j)
