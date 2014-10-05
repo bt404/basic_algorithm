@@ -26,8 +26,8 @@ void SortChar(char data[], int length)
 int main(void)
 {
     char data[] = {'R', 'B', 'B', 'b', 'W', 'W', 'R', 'B', 'w'};
-    SortChar(data, 9);
-    for(int i=0; i<9; ++i)
+    SortChar(data, sizeof(data));
+    for(int i=0; i<sizeof(data); ++i)
     {
         printf("%c ", data[i]);
     }
