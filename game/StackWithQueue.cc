@@ -23,15 +23,8 @@ void StackWithQueue::push(int data)
 
 int StackWithQueue::pop()
 {
-    try
-    {
-        if(queues[flag].empty())
-            throw "栈空";
-    }
-    catch(const char *e)
-    {
-        std::cout << e << std::endl;
-    }
+    if(queues[flag].empty())
+        throw "栈空";
     while(queues[flag].size()!=1)
     {
         queues[1-flag].push(queues[flag].front());
@@ -45,19 +38,26 @@ int StackWithQueue::pop()
 
 int main(void)
 {
-    StackWithQueue stack;
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.push(4);
-    int ret = stack.pop();
-    std::cout << ret << std::endl;
-    ret = stack.pop();
-    std::cout << ret << std::endl;
-    stack.push(5);
-    stack.pop();
-    stack.pop();
-    stack.pop();
-    stack.pop();
+    try
+    {
+        StackWithQueue stack;
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        int ret = stack.pop();
+        std::cout << ret << std::endl;
+        ret = stack.pop();
+        std::cout << ret << std::endl;
+        stack.push(5);
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+    }
+    catch(const char *e)
+    {
+        std::cout << e << std::endl;
+    }
     return 0;
 }
