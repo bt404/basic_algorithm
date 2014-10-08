@@ -79,7 +79,7 @@ int IsBalenced(char *str)
 int main(void)
 {
     char *strBalenced = "(()(()))";
-    char *strNotBalenced = "(()()))(";
+    char *strNotBalenced = "(()()))(";  /* 虽然数量平衡，但是无意义。 */
     char *strInvalid = "((not ))";
     int ret1 = IsBalenced(strBalenced);
     int ret2 = IsBalenced(strNotBalenced);
