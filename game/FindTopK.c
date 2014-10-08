@@ -33,18 +33,19 @@ void GetTopK(int data[], int start, int end, int k)
     printf("end: %d\n", end);
     if(k <= 0)
         return;
-    int count = Partition(data, start, end);
-    printf("count: %d\n", count+1);
+    int index = Partition(data, start, end);
+    printf("count: %d\n", index+1);
     printf("\n");
-    if(count == -1)
+    int count = index-start+1;
+    if(index == -1)
         return;
-    else if((count-start+1) > k)    // k 是每次要找到的元素数
+    else if(count > k)    // k 是每次要找到的元素数
     {
-        GetTopK(data, start, count-1, k);
+        GetTopK(data, start, index-1, k);
     }
-    else if((count-start+1) < k)
+    else if(count < k)
     {
-        GetTopK(data, count+1, end, k-(count-start+1));
+        GetTopK(data, index+1, end, k-count);
     }
 }
 
