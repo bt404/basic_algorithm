@@ -12,8 +12,9 @@ int Partition(int data[], int start, int end)
 {
     if(data==NULL || start>end || end<=0)
         return -1;
+    int i = start+rand()%(end-start+1);
     int small = start;
-    for(int i=start; i<end; ++i)
+    for(i=start; i<end; ++i)
     {
         if(data[i] < data[end])
         {

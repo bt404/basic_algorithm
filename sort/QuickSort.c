@@ -1,24 +1,30 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int Partition(int a[], int p, int r)
+void Swap(int *a, int *b)
 {
-    if (!a) return -1;
-    int i = p;
-    int j, temp;
-    for(j=p; j<r; ++j)
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int Partition(int data[], int start, int end)
+{
+    if (!data) return -1;
+    int small = start;
+    int i = start+rand()%(end-start+1);
+    Swap(&data[i], &data[end]);
+    for(i=start; i<end; ++i)
     {
-        if(a[j]<a[r])
+        if(data[i] < data[end])
         {
-            temp = a[j];
-            a[j] = a[i];
-            a[i] = temp;
-            ++i;
+            if(small != i)
+                Swap(&data[small], &data[i]);
+            ++small;
         }
     }
-    temp = a[i];
-    a[i] = a[r];
-    a[r] = temp;
-    return i;
+    Swap(&data[small], &data[end]);
+    return small;
 }
 
 void QuickSort(int a[], int p, int r)
