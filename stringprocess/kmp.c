@@ -33,7 +33,7 @@ int KMP(char *text, char *pattern, int lenText, int lenPattern)
     int next[lenPattern];
     GetNext(pattern, next, lenPattern);
     int i=0, j=0;
-    int ret;
+    int ret = -1;
     while (i < lenText && j < lenPattern)
     {
         if (j == -1 || text[i] == pattern[j])
@@ -53,12 +53,12 @@ int KMP(char *text, char *pattern, int lenText, int lenPattern)
     return ret;
 }
 
-int main()
-{
-    char *text = "abcabdef";
-    char *patt = "abd";
-    int ret = KMP(text, patt, strlen(text), strlen(patt));
-    printf("%d\n", ret);
-
-    return 0;
-}
+//int main()
+//{
+//    char *text = "abcabdef";
+//    char *patt = "abd";
+//    int ret = KMP(text, patt, strlen(text), strlen(patt));
+//    printf("%d\n", ret);
+//
+//    return 0;
+//}
