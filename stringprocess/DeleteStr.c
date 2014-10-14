@@ -29,7 +29,7 @@ void DeleteStr(char *pSrc, char *pDel)
     index[flag] = KMP(p, pDel, lenSrc, lenDel);
     if(index[flag] == -1)
         return;
-    while(index[flag]!=-1 && count<5)
+    while(index[flag]!=-1)
     {
         ++count;
         p += index[flag]+lenDel;
