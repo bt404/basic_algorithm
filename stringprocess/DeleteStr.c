@@ -27,8 +27,6 @@ void DeleteStr(char *pSrc, char *pDel)
     int flag = 0;
     char *p = pSrc;
     index[flag] = KMP(p, pDel, lenSrc, lenDel);
-    if(index[flag] == -1)
-        return;
     while(index[flag]!=-1)
     {
         ++count;
@@ -45,9 +43,14 @@ void DeleteStr(char *pSrc, char *pDel)
 
 int main(void)
 {
-    char pSrc[] = {"tell hello elle"};
-    char pDel[] = {"el"};
-    DeleteStr(pSrc, pDel);
-    printf("%s\n", pSrc);
+    char pSrc1[] = {"tell hello elle"};
+    char pDel1[] = {"el"};
+    DeleteStr(pSrc1, pDel1);
+    printf("%s\n", pSrc1);
+
+    char pSrc2[] = {"tell hello elle"};
+    char pDel2[] = {"non"};
+    DeleteStr(pSrc2, pDel2);
+    printf("%s\n", pSrc2);
     return 0;
 }
