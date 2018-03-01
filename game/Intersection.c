@@ -36,6 +36,7 @@ void Intersection(int data1[], int size1, int data2[], int size2)
 
 int main(void)
 {
+    // 如果是一般数组可以先对两个数组进行排序
     int data1[] = {1, 2, 4, 6, 8, 12, 24};
     int data2[] = {1, 2, 5, 7, 8, 12, 24, 30};
     Intersection(data1, 7, data2, 8);
